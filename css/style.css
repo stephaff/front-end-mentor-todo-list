@@ -108,8 +108,10 @@ body{
     align-items: center;
 }
 .todo-list-delete img{
-    display: none;
     cursor: pointer;
+}
+.display-icon{
+    display: block;
 }
 .todo-list-details{
     position: relative;

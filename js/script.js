@@ -8,6 +8,7 @@ function addTodo(){
     let mainContent = document.querySelector('main');
     if (todoLabel.value != ''){
         if (countTodo == 0) {
+            countTodo++;
             mainContent.innerHTML = `<div class="todo-list">
             <input type="radio" name="todo-add" class="todo-add-items">
             <label class="todo-list-label">${todoLabel.value}</label>
@@ -17,7 +18,7 @@ function addTodo(){
         </div>
         <div class="todo-list-details">
           <div class="todo-list-details-links">
-            <p>5 items left</p>
+            <p class="todo-left">${countTodo} items left</p>
           </div>
           <div class="todo-list-details-links-state">
             <a href="">All</a>
@@ -27,12 +28,12 @@ function addTodo(){
           <div class="todo-list-details-links link-remove">
             <a href="">Clear completed</a>
           </div>
-        </div>`;
-        countTodo++; 
+        </div>`; 
         todoLabel.value = '';
         addEven();  
         }
         else{
+            countTodo++;
             mainContent.innerHTML = `<div class="todo-list">
             <input type="radio" name="todo-add" class="todo-add-items">
             <label class="todo-list-label">${todoLabel.value}</label>
@@ -40,7 +41,6 @@ function addTodo(){
               <img src="images/icon-cross.svg" alt="icon-cross" class="icon-cross">
             </div>
         </div>${mainContent.innerHTML}`;
-        countTodo++;
         todoLabel.value = ''
         addEven();
         }
@@ -56,6 +56,10 @@ function addEven(){
     iconCross.forEach(element => {
         element.addEventListener('click', deleteTodo);
     });
+    let todo = document.querySelectorAll('.todo-list');
+    todo.forEach(element => {
+      element.addEventListener('mouseover', displayIconCross);
+  });
 }
 
 function deleteTodo(){
@@ -72,4 +76,8 @@ function deleteTodo(){
 
 function checkTodo(){
     this.nextElementSibling.classList.toggle('todo-state');
+}
+
+function displayIconCross(){
+  // alert('OK');
 }
