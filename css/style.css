@@ -22,9 +22,11 @@
     --Very-dark-grayish-blue: hsl(237, 14%, 26%);
 }
 body{
+    position: relative;
     font-size: 18px;
     font-family: 'Josefin Sans', sans-serif;
     background-color: var(--very-dark-blue);
+    min-height: 100vh;
 }
 .banner{
     display: flex;
@@ -99,16 +101,79 @@ body{
     position: relative;
     top: -40px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    font-size: 11px;
+    color: var(--dark-grayish-blue);
     width: 40%;
     height: 55px;
+    padding: 0rem 1rem 0rem 1rem;
     margin: 0px auto;
     background-color: var(--very-dark-desaturated-blue);
     border-radius: 5px;
 }
+.todo-list-details a{
+    color: var(--dark-grayish-blue);
+    padding: 0px 4px 0px 4px;
+    text-decoration: none;
+}
+footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding: 1.5rem 0rem 1.5rem 0rem;
+}
 .attribution{ 
     font-size: 11px; text-align: center; 
+    color: var(--light-grayish-blue-dark);
 }
-.attribution a{ color: hsl(228, 45%, 44%); 
+.attribution a{ 
+    color: var(--light-grayish-blue-dark); 
+}
+
+/*mobile design*/
+
+@media screen and (max-width : 375px) {
+    .banner{
+        height: 200px;
+    }
+    .banner-todo{
+        width: 90%;
+    }
+    .banner-create-todo{
+        width: 90%;
+        height: 55px;
+    }
+    .todo-list{
+        top: -20px;
+        width: 90%;
+    }
+    .todo-list-details{
+        top: -20px;
+        width: 90%;
+        display: flex;
+        align-items: center;
+    }
+    .todo-list-details-links{
+        width: 50%;
+    }
+    .link-remove{
+        text-align: right;
+    }
+    .todo-list-details-links-state{
+        position: absolute;
+        top: 70px;
+        right: 0px;
+        width: 100%;
+        height: 55px;
+        font-size: 16px;
+        background-color: var(--very-dark-desaturated-blue);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .todo-list-details-links-state a{
+        margin: 0rem 0.15rem 0rem 0.15rem;
+    }
 }
