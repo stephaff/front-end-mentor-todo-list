@@ -10,7 +10,7 @@ function addTodo(){
         if (countTodo == 0) {
             countTodo++;
             mainContent.innerHTML = `<div class="todo-list">
-            <input type="radio" name="todo-add" class="todo-add-items">
+            <input type="checkbox" name="todo-add" class="todo-add-items">
             <label class="todo-list-label">${todoLabel.value}</label>
             <div class="todo-list-delete">
               <img src="images/icon-cross.svg" alt="icon-cross" class="icon-cross">
@@ -35,7 +35,7 @@ function addTodo(){
         else{
             countTodo++;
             mainContent.innerHTML = `<div class="todo-list">
-            <input type="radio" name="todo-add" class="todo-add-items">
+            <input type="checkbox" name="todo-add" class="todo-add-items">
             <label class="todo-list-label">${todoLabel.value}</label>
             <div class="todo-list-delete">
               <img src="images/icon-cross.svg" alt="icon-cross" class="icon-cross">
